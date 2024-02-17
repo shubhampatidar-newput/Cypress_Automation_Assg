@@ -38,20 +38,40 @@ class CommonApis{
         })
     }
 
-    updateUser(accessToken, id, name, email, location){
+    getUserDetailsById(accessToken, id){
         return cy.request({
-            method : 'POST',
+            method : 'GET',
             url: 'http://restapi.adequateshop.com/api/users/' + id,
-            headers: { 'Authorization': 'Bearer ' + accessToken , 'Content-Type' : 'application/json' },
-            body: { "name":name , "email":email , "location":location }
+            headers: { 'Authorization': 'Bearer ' + accessToken , 'Content-Type' : 'application/json' }
         }).then((Response) => {
-            expect(Response.status).to.eq(201)
+            expect(Response.status).to.eq(200)
             let res = Response.body
             return res
         })
     }
 
+    updateUser(name, job){
+        return cy.request({
+            method : 'PUT',
+            url: 'https://reqres.in/api/users/2',
+            body: {"name": name, "job": job}
+        }).then((Response) => {
+            expect(Response.status).to.eq(200)
+            let res = Response.body
+            return res
+        })
+    }
 
+    deleteUser(){
+        return cy.request({
+            method : 'DELETE',
+            url: 'https://reqres.in/api/users/2',
+        }).then((Response) => {
+            expect(Response.status).to.eq(204)
+            let res = Response.body
+            return res
+        })
+    }
 }
 
 export default CommonApis;
