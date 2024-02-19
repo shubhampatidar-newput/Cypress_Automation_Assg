@@ -8,6 +8,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "convert-excel-to-json": "^1.7.0",
+    "csv-append": "^1.0.0",
     "neat-csv": "^5.2.0"
   },
   "devDependencies": {
