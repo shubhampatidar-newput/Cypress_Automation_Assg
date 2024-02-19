@@ -4,5 +4,6 @@
     "pwd" : "secret_sauce",
     "firstName" : "Shubham",
     "lastName" : "Patidar",
-    "pinCode" : "454446"
+    "pinCode" : "454446",
+    "api" : "https://reqres.in/"
 }

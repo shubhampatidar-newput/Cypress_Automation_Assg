@@ -1,5 +1,10 @@
 class CommonApis{
 
+    getSpecificUserDetailsAPIButton() {
+        return cy.get('[data-id="users-single"]')
+    }
+
+    //Method to generate API access token
     generateAccessToken(){
         return cy.request({
             method: 'POST',
@@ -13,6 +18,7 @@ class CommonApis{
         })
     }
 
+    //API to get all users details
     getAllUsersDetails(accessToken){
         return cy.request({
             method : 'GET',
@@ -25,6 +31,7 @@ class CommonApis{
         })
     }
 
+    //API to create a new user
     createUser(accessToken, name, email, location){
         return cy.request({
             method : 'POST',
@@ -38,6 +45,7 @@ class CommonApis{
         })
     }
 
+    //API to get user detail by id
     getUserDetailsById(accessToken, id){
         return cy.request({
             method : 'GET',
@@ -50,6 +58,7 @@ class CommonApis{
         })
     }
 
+    //API to update user
     updateUser(name, job){
         return cy.request({
             method : 'PUT',
@@ -62,6 +71,7 @@ class CommonApis{
         })
     }
 
+    //API to delete user
     deleteUser(){
         return cy.request({
             method : 'DELETE',
