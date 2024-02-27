@@ -3,6 +3,7 @@ const excelToJson = require('convert-excel-to-json');
 const fs = require('fs');
 
 module.exports = defineConfig({
+  projectId: "cs82jg",
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
