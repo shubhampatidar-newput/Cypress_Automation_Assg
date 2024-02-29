@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 const neatCsv = require('neat-csv');
-import CsvExcelPage from './Pages/CsvExcelPage';
+import CsvExcelPage from '../Pages/CsvExcelPage';
 
 describe('Read Write CSV file', () => {
     const CsvExcelPageObj = new CsvExcelPage()

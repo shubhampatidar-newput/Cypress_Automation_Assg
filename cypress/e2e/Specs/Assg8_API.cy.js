@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import APIPage from './Pages/APIPage.js'
+import APIPage from '../Pages/APIPage.js'
 
 describe('API Testing', () => {
     const apiPageObj = new APIPage()

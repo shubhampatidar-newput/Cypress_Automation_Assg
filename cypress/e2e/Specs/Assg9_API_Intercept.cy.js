@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import CommonApis from "./Pages/APIPage"
+import CommonApis from "../Pages/APIPage"
 
 describe('Validate by Intercepting API response', () => {
   const CommonApisPageObj = new CommonApis()
