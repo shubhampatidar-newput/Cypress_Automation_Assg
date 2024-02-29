@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
-import sauceDemoPage from './Pages/SauceDemoPage.js'
+import sauceDemoPage from '../Pages/SauceDemoPage.js'
 
-describe('Modify script using Page Object', () => {
+describe('Use of forEach method', () => {
     const sauceDemoPageObj = new sauceDemoPage()
     var loginData
     before('beforeAll', () => {
@@ -10,19 +10,14 @@ describe('Modify script using Page Object', () => {
         })
     })
 
-    it('Use of Page Object in Checkout flow', () => {
+    it('Use of for Each Method of javascript', () => {
+        const itemsToAdd = ['Sauce Labs Backpack', 'Sauce Labs Bike Light' , 'Sauce Labs Onesie']
         cy.visit(loginData.url)
         cy.login(loginData.emailId , loginData.pwd)
-        sauceDemoPageObj.inventoryItem().each($el => {
-            const itemName = $el.find(sauceDemoPageObj.inventoryItemNameElement).text()
-            if (itemName == 'Sauce Labs Backpack') {
-                const ItemsAddToCartButton = cy.wrap($el.find(sauceDemoPageObj.addToCartButton))
-                ItemsAddToCartButton.click()
+        itemsToAdd.forEach(sauceDemoPageObj.clickOnAddToCart)
                 sauceDemoPageObj.shoppingCartBadge().should('be.visible')
-                sauceDemoPageObj.shoppingCartBadge().should('have.text', '1')
+                sauceDemoPageObj.shoppingCartBadge().should('have.text', '3')
                 sauceDemoPageObj.shoppingCart().click()
-                sauceDemoPageObj.itemsInCart().find(sauceDemoPageObj.cartQuantity).should('have.text', '1')
-                sauceDemoPageObj.itemsInCart().find(sauceDemoPageObj.inventoryItemNameElement).should('have.text', itemName)
                 sauceDemoPageObj.clickOnCheckoutButton()
                 sauceDemoPageObj.validateCheckoutPageTitle()
                 sauceDemoPageObj.enterFirstName(loginData.firstName)
@@ -31,7 +26,5 @@ describe('Modify script using Page Object', () => {
                 sauceDemoPageObj.continueButtonOnCheckout().click()
                 sauceDemoPageObj.finishButton().click()
                 sauceDemoPageObj.successMessage().should('have.text', 'Thank you for your order!')
-            }
-        })
     })
 })

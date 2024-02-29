@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import goibiboPage from "./Pages/goibiboPage"
+import goibiboPage from "../Pages/goibiboPage"
 
 describe('Alert, Checkbox, Radio Button, Viewport and Autocomplete drop down', () => {
   const goibiboPageObj = new goibiboPage()
