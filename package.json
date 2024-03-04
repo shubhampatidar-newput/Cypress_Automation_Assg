@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run" : "npx cypress run --spec cypress/e2e",
-    "cy:runAssg10" : "npx cypress run --spec cypress/e2e/Assg10_Read_Write_CSV.cy.js"
+    "cy:run" : "npx cypress run --spec cypress/e2e/Specs",
+    "cy:runAssg10" : "npx cypress run --spec cypress/e2e/Specs/Assg10_Read_Write_CSV.cy.js"
   },
   "author": "",
   "license": "ISC",
