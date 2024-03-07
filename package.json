@@ -4,20 +4,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run" : "npx cypress run --spec cypress/e2e/Specs",
-    "cy:runAssg10" : "npx cypress run --spec cypress/e2e/Specs/Assg10_Read_Write_CSV.cy.js"
+    "cy:run": "npx cypress run --spec cypress/e2e/Specs",
+    "cy:runAssg10": "npx cypress run --spec cypress/e2e/Specs/Assg10_Read_Write_CSV.cy.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "convert-excel-to-json": "^1.7.0",
     "csv-append": "^1.0.0",
-    "neat-csv": "^5.2.0"
+    "luxon": "^3.4.4",
+    "neat-csv": "^5.2.0",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "cypress": "^13.6.4",
     "cypress-file-upload": "^5.0.8",
-    "cypress-mochawesome-reporter": "^3.8.1"
+    "cypress-mochawesome-reporter": "^3.8.1",
+    "gmail-tester": "^1.3.8",
+    "twilio": "^4.23.0"
   },
   "description": ""
 }
