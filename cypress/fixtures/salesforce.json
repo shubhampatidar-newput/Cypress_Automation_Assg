@@ -1,0 +1,6 @@
+{
+    "url" : "https://tbid.digital.salesforce.com/",
+    "toEmail" : "cypresstest988@gmail.com",
+    "fromEmail" : "no-reply@digital.salesforce.com",
+    "subject" : "One-time verification code"
+}
