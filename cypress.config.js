@@ -36,7 +36,6 @@ module.exports = defineConfig({
 
       on("task", {
         "gmail:check": async (args) => {
-          debugger
           const { from, to, subject } = args;
           const email = await gmail.check_inbox(
             path.resolve("node_modules/gmail-tester/", "OAuth.json"),
