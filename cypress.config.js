@@ -3,6 +3,7 @@ const excelToJson = require('convert-excel-to-json');
 const fs = require('fs');
 const path = require("path");
 const gmail = require("gmail-tester");
+const cucumber = require('cypress-cucumber-preprocessor').default
 
 module.exports = defineConfig({
   projectId: "cs82jg",
@@ -53,8 +54,11 @@ module.exports = defineConfig({
         },
       })
 
+      on('file:preprocessor', cucumber())
+
     },
     chromeWebSecurity: false,
     testIsolation: false,
+    specPattern: 'cypress/e2e/**/*.{cy.{js,jsx,ts,tsx},feature}'
   },
 });

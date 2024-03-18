@@ -7,7 +7,7 @@ class SalesforcePage{
         return cy.get('idx-standard-login-page').shadow().find('.left').shadow().find('lwc-wes-button')
     }
     submitButton(){
-        return cy.get('idx-standard-login-page').shadow().find('.left').shadow().find('lwc-wes-button').shadow().find('button[type="submit"]')
+        return cy.get('idx-standard-login-page').shadow().find('.left').shadow().find('lwc-wes-button')
     }
 
 }

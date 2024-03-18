@@ -29,7 +29,7 @@ describe('Get OTP from Email and validate login to Salesforce using the OTP', ()
       }
       cy.log(getOTP(otp))
       salesforcePageObj.emailAndOtpTextField().type(getOTP(otp))
-      salesforcePageObj.submitButton().click({force: true})
+      salesforcePageObj.submitButton().click()
     })
   })
 
