@@ -19,38 +19,46 @@ class CommonApis{
     }
 
     //API to get all users details
-    getAllUsersDetails(accessToken){
+    getAllUsersDetails(){
         return cy.request({
             method : 'GET',
-            url: 'http://restapi.adequateshop.com/api/users?page=1',
-            headers: { 'Authorization': 'Bearer ' + accessToken , 'Content-Type' : 'application/json' }
+            url: 'https://api.restful-api.dev/objects',
+            headers: {'Content-Type' : 'application/json' }
         }).then((Response) => {
             expect(Response.status).to.eq(200)
-            let res = Response.body.data
+            let res = Response.body
             return res
         })
     }
 
     //API to create a new user
-    createUser(accessToken, name, email, location){
+    createUser(name, year, price){
         return cy.request({
             method : 'POST',
-            url: 'http://restapi.adequateshop.com/api/users',
-            headers: { 'Authorization': 'Bearer ' + accessToken , 'Content-Type' : 'application/json' },
-            body: { "name":name , "email":email , "location":location }
+            url: 'https://api.restful-api.dev/objects',
+            headers: {'Content-Type' : 'application/json' },
+            body: {
+                "name": name,
+                "data": {
+                   "year": year,
+                   "price": price,
+                   "CPU model": "Intel Core i9",
+                   "Hard disk size": "1 TB"
+                }
+             }
         }).then((Response) => {
-            expect(Response.status).to.eq(201)
+            expect(Response.status).to.eq(200)
             let res = Response.body
             return res
         })
     }
 
     //API to get user detail by id
-    getUserDetailsById(accessToken, id){
+    getUserDetailsById(id){
         return cy.request({
             method : 'GET',
-            url: 'http://restapi.adequateshop.com/api/users/' + id,
-            headers: { 'Authorization': 'Bearer ' + accessToken , 'Content-Type' : 'application/json' }
+            url: 'https://api.restful-api.dev/objects?id=' + id,
+            headers: {'Content-Type' : 'application/json' }
         }).then((Response) => {
             expect(Response.status).to.eq(200)
             let res = Response.body

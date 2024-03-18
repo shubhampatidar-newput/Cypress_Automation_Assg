@@ -1,4 +1,4 @@
-Feature: Checkout flow on SauceDemo
+Feature: Checkout flow on SauceDemo using BDD Cucumber framework
 
     I want to login on Saucedemo and validate checkout flow
 
